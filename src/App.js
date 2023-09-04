@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import CCounter from './Component/CCounter';
+import { Provider } from 'react-redux'
+import store from './MultiReduxFolder/MCstore';
+import HookCounter from './Component/HookCounter';
+import Mage from './Component/Mage'
+// here we are connecting provider to store
+// we have imported both and comnnected and made it global  
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <p> Redux used to Adjust the Age</p>
+      <Provider store = {store}>
+
+      {/* <CCounter/>
+      <HookCounter/> */}
+      <Mage/>
+      </Provider>
     </div>
   );
 }
